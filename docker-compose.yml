@@ -1,0 +1,19 @@
+version: '3'
+services:
+  node1:
+    build:
+      context: .
+    container_name: ros2_monitor
+    command: bash -c ". install/setup.bash && ros2 run nodes monitor"
+    
+  node2:
+    build:
+      context: .
+    container_name: ros2_calculator
+    command: bash -c ". install/setup.bash && ros2 run nodes calculator"
+    
+  node3:
+    build:
+      context: .
+    container_name: ros2_publisher
+    command: bash -c ". install/setup.bash && ros2 run nodes publisher"
